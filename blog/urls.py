@@ -1,13 +1,12 @@
-#!/usr/bin/env python 
-# -*- coding: utf-8 -*-
-# @Time    : 2019/12/19 13:53
-# @Author  : 三哥
-# @Site    : 
-# @File    : urls.py.py
-# @Software: PyCharm
 from django.urls import path
+from .views import (
+    PostListView,
+    PostDetailView,
+    PostCreateView)
 from . import views
 urlpatterns = [
-    path('', views.home, name='blog-home'),
+    path('', PostListView.as_view(), name='blog-home'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('about/', views.about, name='blog-about'),
 ]
