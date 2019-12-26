@@ -86,6 +86,5 @@ uploads/
 settings_production.py
 werobot_session.db
 
-*/.DS_Stroe
-.DS_Stroe
-
+*/.DS_Store
+.DS_Store
