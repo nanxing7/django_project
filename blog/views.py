@@ -21,6 +21,9 @@ class PostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 5
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        return super().get_context_data(object_list=object_list, **kwargs)
+
 
 class UserPostListView(ListView):
     model = Post

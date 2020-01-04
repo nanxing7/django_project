@@ -81,7 +81,17 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 #     }
 # }
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_project',
+        'USER': 'root',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'},
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -135,5 +145,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-
-
